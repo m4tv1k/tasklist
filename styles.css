@@ -3,12 +3,10 @@
     padding: 0;
 }
 
-html, body{
-    overflow-x: hidden;
-}
 
 body{
-    background-color: cadetblue;
+    background-color: #3d86f7; 
+    /* a0ccba */
 }
 
 #ready{
@@ -16,14 +14,11 @@ body{
 }
 
 .container{
-    margin: 0;
+    margin: 0 auto;
     padding: 20px 0px;
     border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    top: 80px;
     display: flex;
     flex-direction: column;
     
@@ -141,18 +136,55 @@ button:hover{
 
 .description{
     margin-bottom: 10px;
+    padding-right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    word-break: break-all;
 }
 
 .todo-item{
     margin-left: 30px;
-    width: 70%;
+    width: 83%;
 }
 
 .mark{
-    margin-right: 40px;
-    width: 50px;
-    height: 50px;
-    border: 3px solid red;
-    border-radius: 100px;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgb(240, 49, 49);
+    background-color: rgb(255, 104, 104);
+    border-radius: 100%;
 }
 
+.mark.checked {
+    border: 3px solid  rgb(74, 207, 74);
+    background-color: rgb(108, 253, 108);
+}
+
+.ready{
+    display: inline-block;
+}
+
+.ready.checked{
+    display: none;
+}
+
+.unready{
+    display: none;
+}
+
+.unready.checked{
+    display: inline-block;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+.todo-item.animation{
+    animation: opacity .5s ease-in-out;
+}
