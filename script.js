@@ -16,7 +16,6 @@ const createTemplate = (task, index) => {
             <div class="todo-item ${task.completed ? 'checked' : ''} "> 
                 <div class="description">${task.description}</div>
                 <div class="item-btns">
-                    <!--<input onclick="completeTask(${index})" class="box-ready" type="checkbox" value="READY" ${task.completed ? 'checked' : ''}>-->
                     <button class="btn-ready" onclick="completeTask(${index})" >
                         <span class="ready ${task.completed ? 'checked' : ''}"> READY</span>
                         <span class="unready ${task.completed ? 'checked' : ''}"> UNREADY</span>
@@ -60,27 +59,13 @@ const completeTask = index => {
     fillHtmlList();
 }
 
-
 const completeAll = document.getElementById('ready-all');
-completeAll.addEventListener('click', (tasks) => {
-    tasks.completed = !tasks.completed;
-    if(tasks.completed){
-        todoItemElem[index].classList.add('checked');
-    }
-    updLocal();
-    fillHtmlList();
+
+completeAll.addEventListener('click', () => {
+    console.log('qwe');
+    
 })
 
-
-
-// completeAll.addEventListener('click', () => {
-//     tasks.completed = !tasks.completed;
-//     if(tasks.completed){
-//         todoItemElem[].classList.add('checked');
-//     }
-//     updLocal();
-//     fillHtmlList();
-// })
 
 // кнопка добавления
 addTaskBtn.addEventListener('click', () => {
